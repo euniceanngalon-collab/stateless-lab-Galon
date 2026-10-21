@@ -1,4 +1,4 @@
-# Eunice Galon
+# Eunice Ann S. Galon
 
 ## Student Directory App
 
