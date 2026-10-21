@@ -1,17 +1,9 @@
-# stateless_lab_galon
+# Eunice Galon
 
-A new Flutter project.
+## Student Directory App
 
-## Getting Started
+This is my Flutter Student Directory activity. It displays student information, including their name, course, year level, and email address.
 
-This project is a starting point for a Flutter application.
+### App Screenshot
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![App screenshot](screenshots/app.png)
