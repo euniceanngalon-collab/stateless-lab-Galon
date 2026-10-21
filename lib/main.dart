@@ -1,10 +1,11 @@
+
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const DirectoryApp());
 }
 
-// This class stores student information.
+// This class stores the fixed information of each student.
 class Student {
   final String name;
   final String course;
@@ -19,7 +20,7 @@ class Student {
   });
 }
 
-// List of five sample students.
+// This constant list contains five hard-coded student records.
 const List<Student> students = [
   Student(
     name: 'Eunice Galon',
@@ -53,7 +54,7 @@ const List<Student> students = [
   ),
 ];
 
-// Main application.
+// Stateless because this app only sets the theme and displays the directory.
 class DirectoryApp extends StatelessWidget {
   const DirectoryApp({super.key});
 
@@ -61,22 +62,24 @@ class DirectoryApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Barbie Charm School',
+      title: 'Campus Directory',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFFFF1493),
-          primary: const Color(0xFFFF1493),
-          surface: Colors.white,
-        ),
-        scaffoldBackgroundColor: const Color(0xFFFFF0F5),
+        // Customization 1: Pink color scheme for the app.
+        colorSchemeSeed: const Color(0xFFFF1493),
         useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFFFFF0F5),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFFFF69B4),
+          foregroundColor: Colors.white,
+          centerTitle: true,
+        ),
       ),
       home: const DirectoryScreen(),
     );
   }
 }
 
-// Main student directory screen.
+// Stateless because it displays the fixed directory and student list.
 class DirectoryScreen extends StatelessWidget {
   const DirectoryScreen({super.key});
 
@@ -85,9 +88,6 @@ class DirectoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 85,
-        centerTitle: true,
-        backgroundColor: const Color(0xFFFF69B4),
-        foregroundColor: Colors.white,
         title: const Column(
           children: [
             Text(
@@ -134,7 +134,7 @@ class DirectoryScreen extends StatelessWidget {
   }
 }
 
-// Section heading with a divider.
+// Stateless because the section title is provided by its parent.
 class SectionHeader extends StatelessWidget {
   final String title;
 
@@ -165,7 +165,7 @@ class SectionHeader extends StatelessWidget {
   }
 }
 
-// Row that displays an icon and information.
+// Stateless because it only displays the icon and text it receives.
 class InfoRow extends StatelessWidget {
   final IconData icon;
   final String text;
@@ -201,7 +201,7 @@ class InfoRow extends StatelessWidget {
   }
 }
 
-// Card that displays one student's details.
+// Stateless because it displays the Student data passed by its parent.
 class StudentCard extends StatelessWidget {
   final Student student;
 
@@ -213,6 +213,7 @@ class StudentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      // Customization 2: Rounded corners and a pink border.
       margin: const EdgeInsets.only(bottom: 14),
       color: Colors.white,
       elevation: 3,
@@ -225,6 +226,7 @@ class StudentCard extends StatelessWidget {
         ),
       ),
       child: Padding(
+        // Customization 3: Extra padding inside each student card.
         padding: const EdgeInsets.all(16),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -232,6 +234,7 @@ class StudentCard extends StatelessWidget {
             Column(
               children: [
                 CircleAvatar(
+                  // Customization 4: Pink avatar with the student's initial.
                   radius: 28,
                   backgroundColor: const Color(0xFFFFD6E9),
                   child: Text(
